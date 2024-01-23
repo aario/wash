@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="qwebchannel.js"></script>
+        <script>
+            var channel;
+            function init() {
+                if (typeof qt != 'undefined') {
+                    new QWebChannel(
+                        qt.webChannelTransport,
+                        function(channel) {
+                            channel = channel.objects.channel
+                            channel.echo('Hello')
+                            alert("You should see hello in application output")
+                        }
+                    )
+                } else {
+                    alert("Could not initialize qwebchannel")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>W.A.S.H</h1>
+        <h2>Web Application / Shell Gateway</h2>
+        <h3>Example Web Application</h3>
+    </body>
+</html>
